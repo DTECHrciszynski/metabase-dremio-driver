@@ -29,6 +29,9 @@
 
 (doseq [[feature supported?] {:table-privileges                false
                               :set-timezone                    false
+                              :describe-fields                 false
+                              :describe-fks                    false
+                              :describe-indexes                false
                               :connection-impersonation        false}]
   (defmethod driver/database-supports? [:dremio feature] [_driver _feature _db] supported?))
 
