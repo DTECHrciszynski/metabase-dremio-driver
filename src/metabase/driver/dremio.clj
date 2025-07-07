@@ -91,6 +91,10 @@
   [_ hsql-form amount unit]
   [:timestampadd [:raw (name unit)] amount (h2x/->timestamp hsql-form)])
 
+(defmethod sql.qp/current-datetime-honeysql-form :dremio
+  [_driver]
+  (h2x/with-database-type-info [:current_timestamp] "timestamp"))
+
 (defn- date-trunc [unit expr] (sql/call :date_trunc (h2x/literal unit) (h2x/->timestamp expr)))
 
 (defmethod sql.qp/date [:dremio :week]
