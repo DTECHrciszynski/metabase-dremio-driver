@@ -5,7 +5,7 @@ Dremio driver for Metabase BI
 Version compatibility:
 
 -   Version 1.5.1 works with Metabase v0.55.0/v1.55.0 and above
--   Version 1.5.0.2 works with Metabase v0.51.0/v1.51.0 and above (works with Java 21)
+-   Version 1.5.0.2 works with Metabase v0.51.0/v1.51.0 and below v0.55.0/v1.55.0 (works with Java 21)
 -   Version 1.5.x works with Metabase v0.51.0/v1.51.0 and above
 -   Version 1.4.x works with Metabase v0.50.0/v1.50.0 and above
 -   Version 1.3.x works with Metabase v0.48.0/v1.48.0 and above
