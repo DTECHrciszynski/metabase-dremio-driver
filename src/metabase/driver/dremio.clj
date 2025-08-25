@@ -73,6 +73,12 @@
        :sendTimeAsDatetime false}
       (sql-jdbc.common/handle-additional-options details, :seperator-style :semicolon)))
 
+;; Skip the postgres implementation  as it has to handle custom enums which dremio doesn't support. Based on redshift fix
+(defmethod driver/dynamic-database-types-lookup :dremio
+  [driver database database-types]
+  ((get-method driver/dynamic-database-types-lookup :sql-jdbc) driver database database-types))
+
+
 ;; custom Dremio type handling
 (def ^:private database-type->base-type
   (sql-jdbc.sync/pattern-based-database-type->base-type
